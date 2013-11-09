@@ -1,1 +1,70 @@
-/Users/hxl/.vimrc.local
+set nocursorline " don't highlight current line
+
+" keyboard shortcuts
+inoremap jj <ESC>
+
+" gui settings
+if (&t_Co == 256 || has('gui_running'))
+  if ($TERM_PROGRAM == 'iTerm.app')
+    colorscheme solarized
+  else
+    colorscheme desert
+  endif
+endif
+
+" Disambiguate ,a & ,t from the Align plugin, making them fast again.
+"
+" This section is here to prevent AlignMaps from adding a bunch of mappings
+" that interfere with the very-common ,a and ,t mappings. This will get run
+" at every startup to remove the AlignMaps for the *next* vim startup.
+"
+" If you do want the AlignMaps mappings, remove this section, remove
+" ~/.vim/bundle/Align, and re-run rake in maximum-awesome.
+function! s:RemoveConflictingAlignMaps()
+  if exists("g:loaded_AlignMapsPlugin")
+    AlignMapsClean
+  endif
+endfunction
+command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
+silent! autocmd VimEnter * RemoveConflictingAlignMaps
+
+" custom
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+
+set fileencodings=utf-8,gbk
+
+set guifont=Menlo:h14
+set guioptions-=m
+set guioptions-=T
+
+colorscheme solarized
+set background=light
+
+set nobomb
+set nowrap
+
+set foldmethod=indent
+set foldlevel=99
+set cc=80
+
+set completeopt=longest,menu,preview
+let g:neocomplcache_enable_at_startup = 1
+let g:NeoComplCache_DisableAutoComplete = 1
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+
+let g:gitgutter_highlight_lines = 1
+
+nmap <leader>ff :!js-beautify -f % -r<CR>
+nmap <leader>gg :!gofmt -w -tabs=false -tabwidth=4 %<CR>
+nmap <leader>pp :!autopep8 -i %<CR>
+nmap <leader>cc :cd %:h<CR>
+
+" Vim plugins for Go
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on

@@ -1,1 +1,2 @@
-/Users/hxl/.vimrc.bundles.local
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'ervandew/supertab'
