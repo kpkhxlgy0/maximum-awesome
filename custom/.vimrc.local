@@ -50,7 +50,7 @@ set foldmethod=indent
 set foldlevel=99
 set cc=80
 
-set completeopt=longest,menu,preview
+set completeopt=longest,menu ",preview
 let g:neocomplcache_enable_at_startup = 1
 let g:NeoComplCache_DisableAutoComplete = 1
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
