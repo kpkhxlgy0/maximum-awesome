@@ -51,11 +51,20 @@ set foldlevel=99
 set cc=80
 
 set completeopt=longest,menu ",preview
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+" let g:SuperTabDefaultCompletionType = 'context'
+" let g:SuperTabContextDefaultCompletionType = '<c-m>' " '<c-p>'
+let g:acp_enableAtStartUp = 0
 let g:neocomplcache_enable_at_startup = 1
-let g:NeoComplCache_DisableAutoComplete = 1
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_disable_auto_complete = 1
 
 let g:gitgutter_highlight_lines = 1
+
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:jshint_highlight_color = "Red"
 
 nmap <leader>ff :!js-beautify -f % -r<CR>
 nmap <leader>gg :!gofmt -w -tabs=false -tabwidth=4 %<CR>
