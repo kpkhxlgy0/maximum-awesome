@@ -51,9 +51,7 @@ set foldlevel=99
 set cc=80
 
 set completeopt=longest,menu ",preview
-let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-" let g:SuperTabDefaultCompletionType = 'context'
-" let g:SuperTabContextDefaultCompletionType = '<c-m>' " '<c-p>'
+" let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
 let g:acp_enableAtStartUp = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
