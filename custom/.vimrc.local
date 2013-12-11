@@ -57,14 +57,17 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplcache_disable_auto_complete = 1
+let g:neocomplcache_disable_auto_complete = 0
 
 let g:gitgutter_highlight_lines = 1
 
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:jshint_highlight_color = "Red"
 
-nmap <leader>ff :!js-beautify -f % -r<CR>
+" nmap <leader>ff :!js-beautify -f % -r<CR>
+autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
 nmap <leader>gg :!gofmt -w -tabs=false -tabwidth=4 %<CR>
 nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
