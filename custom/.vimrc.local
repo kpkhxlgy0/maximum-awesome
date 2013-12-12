@@ -33,6 +33,11 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
+if exists('$TMUX')
+  set clipboard=
+else
+  set clipboard=unnamed
+endif
 
 set fileencodings=utf-8,gbk
 
