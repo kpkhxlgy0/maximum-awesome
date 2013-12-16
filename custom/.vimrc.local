@@ -33,6 +33,11 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
+if exists('$TMUX')
+  set clipboard=
+else
+  set clipboard=unnamed
+endif
 
 set fileencodings=utf-8,gbk
 
@@ -64,7 +69,10 @@ let g:gitgutter_highlight_lines = 1
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:jshint_highlight_color = "Red"
 
-nmap <leader>ff :!js-beautify -f % -r<CR>
+" nmap <leader>ff :!js-beautify -f % -r<CR>
+autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
 nmap <leader>gg :!gofmt -w -tabs=false -tabwidth=4 %<CR>
 nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
