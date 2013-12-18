@@ -181,6 +181,9 @@ task :default do
   link_file 'tmux.conf'             , '~/.tmux.conf'
   link_file 'vimrc'                 , '~/.vimrc'
   link_file 'vimrc.bundles'         , '~/.vimrc.bundles'
+  # custom
+  link_file 'custom/.vimrc.local'           , '~/.vimrc.local'
+  link_file 'custom/.vimrc.bundles.local'   , '~/.vimrc.bundles.local'
   unless File.exist?(File.expand_path('~/.vimrc.local'))
     cp File.expand_path('vimrc.local'), File.expand_path('~/.vimrc.local'), :verbose => true
   end
