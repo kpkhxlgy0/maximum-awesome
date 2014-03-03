@@ -76,6 +76,7 @@ autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
 nmap <leader>gg :!gofmt -w -tabs=false -tabwidth=4 %<CR>
 nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
+nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
 
 " Vim plugins for Go
 filetype off
