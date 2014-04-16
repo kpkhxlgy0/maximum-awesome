@@ -92,7 +92,6 @@ if has("cscope")
         cs add $CSCOPE_DB
     endif
     set csverb
-    endif
 endif
 
 " Vim plugins for Go
