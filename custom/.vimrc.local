@@ -67,7 +67,9 @@ let g:neocomplcache_disable_auto_complete = 0
 let g:gitgutter_highlight_lines = 1
 
 let g:syntastic_javascript_checkers = ["jshint"]
-let g:jshint_highlight_color = "Red"
+let g:JSHintUpdateWriteOnly = 1
+let g:JSHintHighlightErrorLine = 1
+" let g:jshint_highlight_color = "Red"
 
 " nmap <leader>ff :!js-beautify -f % -r<CR>
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
