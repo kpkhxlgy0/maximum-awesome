@@ -221,8 +221,7 @@ LINKED_FILES = filemap(
   'vimrc'         => '~/.vimrc',
   'vimrc.bundles' => '~/.vimrc.bundles',
   'custom/.vimrc.local'           => '~/.vimrc.local',
-  'custom/.vimrc.bundles.local'   => '~/.vimrc.bundles.local',
-  'custom/.ctags'                 => '~/.ctags'
+  'custom/.vimrc.bundles.local'   => '~/.vimrc.bundles.local'
 )
 
 desc 'Install these config files.'
