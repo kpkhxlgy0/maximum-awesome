@@ -97,6 +97,7 @@ if has("cscope")
 endif
 
 " Vim plugins for Go
+let g:neocomplcache_omni_patterns.go = '\h\w*\.'
 " filetype off
 " filetype plugin indent off
 " set rtp+=$GOROOT/misc/vim

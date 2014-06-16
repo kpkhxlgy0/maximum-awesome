@@ -5,3 +5,4 @@ Bundle 'einars/js-beautify'
 " golang
 Bundle 'dgryski/vim-godef'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'cespare/vim-golang'
