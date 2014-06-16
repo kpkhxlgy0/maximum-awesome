@@ -97,9 +97,8 @@ if has("cscope")
 endif
 
 " Vim plugins for Go
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
+" filetype off
+" filetype plugin indent off
+" set rtp+=$GOROOT/misc/vim
+" filetype plugin indent on
+" syntax on
