@@ -41,7 +41,11 @@ endif
 
 set fileencodings=utf-8,gbk
 
-set guifont=Menlo:h14
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h14 " :cANSI
+else
+    set guifont=Menlo:h14
+endif
 set guioptions-=m
 set guioptions-=T
 
@@ -106,3 +110,9 @@ let g:neocomplcache_omni_patterns.go = '\h\w*\.'
 " set rtp+=$GOROOT/misc/vim
 " filetype plugin indent on
 " syntax on
+
+" for windows
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    language messages zh_CN.utf-8
+    set directory=.,%TEMP%
+endif
