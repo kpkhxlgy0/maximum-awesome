@@ -6,3 +6,6 @@ Bundle 'einars/js-beautify'
 Bundle 'dgryski/vim-godef'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'cespare/vim-golang'
+" lua
+" Bundle "xolox/vim-lua-ftplugin"
+" Bundle "xolox/vim-misc"
