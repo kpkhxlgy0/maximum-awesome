@@ -79,7 +79,8 @@ let g:JSHintHighlightErrorLine = 1
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
-nmap <leader>gg :!gofmt -w -tabs=false -tabwidth=4 %<CR>
+" nmap <leader>gg :!gofmt -w %<CR>
+autocmd FileType go autocmd BufWritePre <buffer> :keepjumps retab
 nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
 nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
