@@ -9,5 +9,5 @@ Bundle 'cespare/vim-golang'
 " erlang
 " Bundle 'jimenezrick/vimerl'
 " lua
-" Bundle 'xolox/vim-lua-ftplugin'
-" Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'xolox/vim-misc'
