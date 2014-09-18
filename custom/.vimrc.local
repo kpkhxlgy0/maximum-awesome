@@ -80,6 +80,7 @@ autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
 " nmap <leader>gg :!gofmt -w %<CR>
+autocmd FileType go autocmd BufWritePre <buffer> :Fmt
 autocmd FileType go autocmd BufWritePre <buffer> :keepjumps retab
 nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
@@ -106,6 +107,33 @@ if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.go = '\h\w*\.'
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 " filetype off
 " filetype plugin indent off
 " set rtp+=$GOROOT/misc/vim
