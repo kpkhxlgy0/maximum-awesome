@@ -1,4 +1,6 @@
-Bundle 'Shougo/neocomplcache.vim'
+" Bundle 'drmingdrmer/xptemplate'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Shougo/neocomplcache.vim'
 " Bundle 'ervandew/supertab'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
