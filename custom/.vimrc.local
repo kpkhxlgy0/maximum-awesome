@@ -148,6 +148,7 @@ endif
 "     let g:neocomplcache_omni_patterns = {}
 " endif
 " let g:neocomplcache_omni_patterns.go = '\h\w*\.'
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
