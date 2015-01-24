@@ -94,7 +94,7 @@ func FormartSrc()
     if &filetype == 'c'
         exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
     elseif &filetype == 'cpp' || &filetype == 'hpp'
-        exec "r !astyle --style=ansi --one-line=keep-statements -a --suffix=none %> /dev/null 2>&1"
+        exec "r !astyle --style=kr --suffix=none %"
     elseif &filetype == 'perl'
         exec "!astyle --style=gnu --suffix=none %"
     elseif &filetype == 'py'||&filetype == 'python'
