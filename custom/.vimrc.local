@@ -82,32 +82,34 @@ autocmd FileType css noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
 " nmap <leader>gg :!gofmt -w %<CR>
 autocmd FileType go autocmd BufWritePre <buffer> :Fmt
-autocmd FileType go autocmd BufWritePre <buffer> :keepjumps retab
+" autocmd FileType go autocmd BufWritePre <buffer> :keepjumps retab
 " nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
 nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
 
 nmap <leader>pp :call FormartSrc()<CR>
 "定义FormartSrc()
-func FormartSrc()
-    exec "w"
-    if &filetype == 'c'
-        exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
-    elseif &filetype == 'cpp' || &filetype == 'hpp'
-        exec "r !astyle --style=kr --suffix=none %"
-    elseif &filetype == 'perl'
-        exec "!astyle --style=gnu --suffix=none %"
-    elseif &filetype == 'py'||&filetype == 'python'
-        exec "r !autopep8 -i --aggressive %"
-    elseif &filetype == 'java'
-        exec "!astyle --style=java --suffix=none %"
-    elseif &filetype == 'jsp'
-        exec "!astyle --style=gnu --suffix=none %"
-    elseif &filetype == 'xml'
-        exec "!astyle --style=gnu --suffix=none %"
-    endif
-    exec "e!  %"
-endfunc
+if !exists("*FormartSrc")
+    func FormartSrc()
+        exec "w"
+        if &filetype == 'c'
+            exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
+        elseif &filetype == 'cpp' || &filetype == 'hpp'
+            exec "r !astyle --style=kr --suffix=none %"
+        elseif &filetype == 'perl'
+            exec "!astyle --style=gnu --suffix=none %"
+        elseif &filetype == 'py'||&filetype == 'python'
+            exec "r !autopep8 -i --aggressive %"
+        elseif &filetype == 'java'
+            exec "!astyle --style=java --suffix=none %"
+        elseif &filetype == 'jsp'
+            exec "!astyle --style=gnu --suffix=none %"
+        elseif &filetype == 'xml'
+            exec "!astyle --style=gnu --suffix=none %"
+        endif
+        exec "e!  %"
+    endfunc
+endif
 
 " cscope
 if has("cscope")
