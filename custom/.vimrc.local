@@ -80,13 +80,24 @@ let g:JSHintHighlightErrorLine = 1
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+let g:go_play_open_browser = 1
+let g:go_fmt_fail_silently = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
 " nmap <leader>gg :!gofmt -w %<CR>
-autocmd FileType go autocmd BufWritePre <buffer> :Fmt
+" autocmd FileType go autocmd BufWritePre <buffer> :Fmt
 " autocmd FileType go autocmd BufWritePre <buffer> :keepjumps retab
 " nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
 nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
-
 nmap <leader>pp :call FormartSrc()<CR>
 "定义FormartSrc()
 if !exists("*FormartSrc")

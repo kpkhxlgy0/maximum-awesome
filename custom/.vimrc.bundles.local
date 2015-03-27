@@ -5,9 +5,10 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 " golang
-Bundle 'dgryski/vim-godef'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'cespare/vim-golang'
+" Bundle 'dgryski/vim-godef'
+" Bundle 'Blackrush/vim-gocode'
+" Bundle 'cespare/vim-golang'
+Bundle 'fatih/vim-go'
 " erlang
 " Bundle 'jimenezrick/vimerl'
 " lua
