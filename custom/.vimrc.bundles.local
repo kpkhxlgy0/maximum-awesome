@@ -1,16 +1,12 @@
-" Bundle 'drmingdrmer/xptemplate'
+" complete
 Bundle 'Valloric/YouCompleteMe'
-" Bundle 'Shougo/neocomplcache.vim'
-" Bundle 'ervandew/supertab'
+" js
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 " golang
-" Bundle 'dgryski/vim-godef'
-" Bundle 'Blackrush/vim-gocode'
-" Bundle 'cespare/vim-golang'
 Bundle 'fatih/vim-go'
-" erlang
-" Bundle 'jimenezrick/vimerl'
 " lua
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'xolox/vim-misc'
+" cs
+Bundle "OmniSharp/omnisharp-vim"
