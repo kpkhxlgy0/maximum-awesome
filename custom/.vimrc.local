@@ -220,6 +220,7 @@ let g:tagbar_type_go = {
 " syntax on
 
 " Vim plugins for lua
+let g:lua_compiler_name = '/usr/local/bin/luac5.1'
 let g:lua_define_completefunc = 0
 
 " for windows
