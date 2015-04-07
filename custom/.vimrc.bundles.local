@@ -9,4 +9,4 @@ Bundle 'fatih/vim-go'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'xolox/vim-misc'
 " cs
-Bundle "OmniSharp/omnisharp-vim"
+" Bundle "OmniSharp/omnisharp-vim"
