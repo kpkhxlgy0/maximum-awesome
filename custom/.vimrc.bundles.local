@@ -1,12 +1,12 @@
 " complete
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " js
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'einars/js-beautify'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
 " golang
-Bundle 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 " lua
-Bundle 'xolox/vim-lua-ftplugin'
-Bundle 'xolox/vim-misc'
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-misc'
 " cs
-" Bundle "OmniSharp/omnisharp-vim"
+" Plugin "OmniSharp/omnisharp-vim"
