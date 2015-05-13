@@ -9,6 +9,6 @@ Plugin 'fatih/vim-go'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 " cs
-" Plugin "OmniSharp/omnisharp-vim"
+" Plugin 'OmniSharp/omnisharp-vim'
 " other
-Plugin "godlygeek/tabular"
+Plugin 'godlygeek/tabular'
