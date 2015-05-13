@@ -10,3 +10,5 @@ Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'xolox/vim-misc'
 " cs
 Bundle "OmniSharp/omnisharp-vim"
+" other
+Bundle "godlygeek/tabular"
