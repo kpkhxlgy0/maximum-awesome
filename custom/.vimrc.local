@@ -42,9 +42,9 @@ endif
 set fileencodings=utf-8,gbk
 
 if(has("win32") || has("win64") || has("win95") || has("win16"))
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h14 " :cANSI
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h12 " :cANSI
 else
-    set guifont=Menlo:h14
+    set guifont=Menlo:h12
 endif
 set guioptions-=m
 set guioptions-=T
