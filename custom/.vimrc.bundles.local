@@ -12,3 +12,4 @@ Plugin 'xolox/vim-misc'
 " Plugin 'OmniSharp/omnisharp-vim'
 " other
 Plugin 'godlygeek/tabular'
+Plugin 'mxw/vim-jsx'

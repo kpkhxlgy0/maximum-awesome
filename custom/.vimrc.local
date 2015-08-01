@@ -50,7 +50,7 @@ set guioptions-=m
 set guioptions-=T
 
 colorscheme solarized
-set background=light
+set background=dark
 
 set nobomb
 set nowrap
