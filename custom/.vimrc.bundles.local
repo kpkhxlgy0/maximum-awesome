@@ -13,3 +13,4 @@ Plugin 'xolox/vim-misc'
 " other
 Plugin 'godlygeek/tabular'
 Plugin 'mxw/vim-jsx'
+Plugin 'plasticboy/vim-markdown'
