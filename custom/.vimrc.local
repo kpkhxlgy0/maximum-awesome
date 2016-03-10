@@ -5,11 +5,12 @@ inoremap jj <ESC>
 
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
-  if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
-  else
-    colorscheme desert
-  endif
+  colorscheme molokai
+  " if ($TERM_PROGRAM == 'iTerm.app')
+  "   colorscheme solarized
+  " else
+  "   colorscheme desert
+  " endif
 endif
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
@@ -48,9 +49,25 @@ else
 endif
 set guioptions-=m
 set guioptions-=T
-
-colorscheme solarized
 set background=dark
+set gcr=a:block-blinkon0
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set cursorline
+" set cursorcolumn
+set hlsearch
+
+" let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+
+" set t_Co=256
+" set background=dark
+" colorscheme solarized
+" set t_Co=256
+" colorscheme molokai
 
 set nobomb
 set nowrap
@@ -213,8 +230,11 @@ endif
 " endif
 " let g:neocomplcache_omni_patterns.go = '\h\w*\.'
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycc_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gd :YcmCompleter GoTo<CR>
+au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdf :YcmCompleter GoToDefinition<CR>
+au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [

@@ -1,5 +1,12 @@
+" theme
+Plugin 'tomasr/molokai'
+Plugin 'sickill/vim-monokai'
+Plugin 'Lokaltog/vim-powerline'
 " complete
 Plugin 'Valloric/YouCompleteMe'
+" cpp
+Plugin 'Mizuchi/STL-Syntax'
+Plugin 'vim-scripts/a.vim'
 " js
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
