@@ -5,12 +5,12 @@ inoremap jj <ESC>
 
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
-  colorscheme molokai
-  " if ($TERM_PROGRAM == 'iTerm.app')
-  "   colorscheme solarized
-  " else
-  "   colorscheme desert
-  " endif
+  " colorscheme monokai
+  if ($TERM_PROGRAM == 'iTerm.app')
+    colorscheme solarized
+  else
+    colorscheme desert
+  endif
 endif
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
@@ -56,7 +56,7 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 set cursorline
-" set cursorcolumn
+set cursorcolumn
 set hlsearch
 
 " let g:indent_guides_enable_on_vim_startup=1
@@ -67,7 +67,7 @@ let g:indent_guides_start_level=2
 " set background=dark
 " colorscheme solarized
 " set t_Co=256
-" colorscheme molokai
+" colorscheme monokai
 
 set nobomb
 set nowrap
@@ -271,6 +271,13 @@ let g:tagbar_type_go = {
 " Vim plugins for lua
 let g:lua_compiler_name = '/usr/local/bin/luac5.1'
 let g:lua_define_completefunc = 0
+
+" python-mode
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_options_max_line_length = 120
+let g:pymode_lint_unmodified = 1
+let g:pymode_lint_ignore = "C901,E501"
+let python_highlight_all=1
 
 " markdown
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>

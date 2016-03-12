@@ -1,18 +1,21 @@
 " theme
-Plugin 'tomasr/molokai'
-Plugin 'sickill/vim-monokai'
+Plugin 'kpkhxlgy0/vim-monokai'
 Plugin 'Lokaltog/vim-powerline'
 " complete
 Plugin 'Valloric/YouCompleteMe'
 " cpp
-Plugin 'Mizuchi/STL-Syntax'
+" Plugin 'Mizuchi/STL-Syntax'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/a.vim'
+" python
+Plugin 'klen/python-mode'
 " js
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 " golang
 Plugin 'fatih/vim-go'
 " lua
+Plugin 'tbastos/vim-lua'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 " cs
