@@ -273,6 +273,7 @@ let g:lua_compiler_name = '/usr/local/bin/luac5.1'
 let g:lua_define_completefunc = 0
 
 " python-mode
+let g:pymode_rope = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_options_max_line_length = 120
 let g:pymode_lint_unmodified = 1
