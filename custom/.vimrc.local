@@ -5,12 +5,12 @@ inoremap jj <ESC>
 
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
-  " colorscheme monokai
-  if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
-  else
-    colorscheme desert
-  endif
+  colorscheme molokai
+  " if ($TERM_PROGRAM == 'iTerm.app')
+  "   colorscheme solarized
+  " else
+  "   colorscheme desert
+  " endif
 endif
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
@@ -63,11 +63,8 @@ set hlsearch
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 
-" set t_Co=256
-" set background=dark
-" colorscheme solarized
-" set t_Co=256
-" colorscheme monokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
 
 set nobomb
 set nowrap
@@ -273,10 +270,16 @@ let g:lua_compiler_name = '/usr/local/bin/luac5.1'
 let g:lua_define_completefunc = 0
 
 " python-mode
+let g:pymode = 0
 let g:pymode_rope = 0
+let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope_autoimport_import_after_complete = 0
 let g:pymode_options_max_line_length = 120
+let g:pymode_lint = 0
 let g:pymode_lint_unmodified = 1
+let g:pymode_lint_on_fly = 0
 let g:pymode_lint_ignore = "C901,E501"
 let g:pymode_breakpoint_bind = "<leader>pb"
 let python_highlight_all=1

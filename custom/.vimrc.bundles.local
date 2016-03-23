@@ -1,5 +1,5 @@
 " theme
-Plugin 'kpkhxlgy0/vim-monokai'
+Plugin 'tomasr/molokai'
 Plugin 'Lokaltog/vim-powerline'
 " complete
 Plugin 'Valloric/YouCompleteMe'
