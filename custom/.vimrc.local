@@ -107,6 +107,13 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+" let g:go_bin_path = expand("~/Documents/gopath/bin")
+" let g:go_bin_path = "/home/fatih/.mypath"
+" let g:go_term_mode = "split"
+" let g:go_term_enabled = 1
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 au FileType go nmap <leader>gr <Plug>(go-run)
 au FileType go nmap <leader>gb <Plug>(go-build)
 au FileType go nmap <leader>gt <Plug>(go-test)
@@ -130,10 +137,6 @@ au FileType go nmap <Leader>grn <Plug>(go-rename)
 au FileType go nmap <leader>grt <Plug>(go-run-tab)
 au FileType go nmap <Leader>grs <Plug>(go-run-split)
 au FileType go nmap <Leader>grv <Plug>(go-run-vertical)
-" let g:go_bin_path = expand("~/.gotools")
-" let g:go_bin_path = "/home/fatih/.mypath"
-" let g:go_term_mode = "split"
-" let g:go_term_enabled = 1
 
 " nmap <leader>gg :!gofmt -w %<CR>
 " autocmd FileType go autocmd BufWritePre <buffer> :Fmt
