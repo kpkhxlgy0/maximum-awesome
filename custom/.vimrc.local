@@ -156,7 +156,7 @@ if !exists("*FormartSrc")
         elseif &filetype == 'perl'
             exec "!astyle --style=gnu --suffix=none %"
         elseif &filetype == 'py'||&filetype == 'python'
-            exec "r !autopep8 -i --aggressive %"
+            exec "r !autopep8 --max-line-length 120 -i --aggressive %"
         elseif &filetype == 'java'
             exec "!astyle --style=java --suffix=none %"
         elseif &filetype == 'jsp'
