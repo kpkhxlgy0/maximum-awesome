@@ -85,6 +85,7 @@ set completeopt=longest,menu ",preview
 " let g:neocomplcache_disable_auto_complete = 0
 
 let g:gitgutter_highlight_lines = 0
+unmap <leader>g
 
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:JSHintUpdateWriteOnly = 1
@@ -115,29 +116,29 @@ let g:go_highlight_build_constraints = 1
 " let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
-au FileType go nmap <leader>gr <Plug>(go-run)
-au FileType go nmap <leader>gb <Plug>(go-build)
-au FileType go nmap <leader>gt <Plug>(go-test)
-au FileType go nmap <leader>gc <Plug>(go-coverage)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>bd <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
-au FileType go nmap <Leader>gds <Plug>(go-def-split)
-au FileType go nmap <Leader>gdv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>gdt <Plug>(go-def-tab)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>go <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
-au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>db <Plug>(go-doc-browser)
 
-au FileType go nmap <Leader>gim <Plug>(go-implements)
+au FileType go nmap <Leader>s <Plug>(go-implements)
 
-au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <Leader>i <Plug>(go-info)
 
-au FileType go nmap <Leader>grn <Plug>(go-rename)
+au FileType go nmap <Leader>e <Plug>(go-rename)
 
-au FileType go nmap <leader>grt <Plug>(go-run-tab)
-au FileType go nmap <Leader>grs <Plug>(go-run-split)
-au FileType go nmap <Leader>grv <Plug>(go-run-vertical)
+au FileType go nmap <leader>rt <Plug>(go-run-tab)
+au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
 
 " nmap <leader>gg :!gofmt -w %<CR>
 " autocmd FileType go autocmd BufWritePre <buffer> :Fmt
