@@ -87,14 +87,22 @@ set completeopt=longest,menu ",preview
 let g:gitgutter_highlight_lines = 0
 unmap <leader>g
 
-fun! ChangeTab()
-    if &ft =~ 'cs\|go'
-        set noexpandtab
-    else
-        set expandtab
-    endif
-endfun
-au BufWritePre * call ChangeTab()
+" fun! ChangeTab()
+"     if &ft =~ 'cs\|go'
+"         set noexpandtab
+"     elseif &ft =~ 'cmake'
+"         set shiftwidth=2
+"         set softtabstop=2
+"         set tabstop=2
+"         set expandtab
+"     else
+"         set expandtab
+"     endif
+" endfun
+" au BufWritePre * call ChangeTab()
+" au FileType * setl shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+au FileType cmake setl shiftwidth=2 softtabstop=2 tabstop=2
+au FileType cs,go setl noexpandtab
 
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:JSHintUpdateWriteOnly = 1
@@ -297,6 +305,14 @@ let g:pymode_lint_on_fly = 0
 let g:pymode_lint_ignore = "C901,E501"
 let g:pymode_breakpoint_bind = "<leader>pb"
 let python_highlight_all=1
+
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"   \ 'file': '\v\.(exe|so|dll)$',
+"   \ 'link': 'some_bad_symbolic_links',
+"   \ }
+let g:ctrlp_working_path_mode = 0
 
 " markdown
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>
