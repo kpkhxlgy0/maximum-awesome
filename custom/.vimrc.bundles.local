@@ -6,12 +6,19 @@ Plugin 'Valloric/YouCompleteMe'
 " cpp
 " Plugin 'Mizuchi/STL-Syntax'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'jeaye/color_coded'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'vim-scripts/a.vim'
+Plugin 'Raimondi/delimitMate'
 " python
 Plugin 'klen/python-mode'
 " js
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'mxw/vim-jsx'
+" html
+Plugin 'mattn/emmet-vim'
 " golang
 Plugin 'fatih/vim-go'
 " lua
@@ -22,7 +29,7 @@ Plugin 'xolox/vim-misc'
 " Plugin 'OmniSharp/omnisharp-vim'
 " other
 Plugin 'godlygeek/tabular'
-Plugin 'mxw/vim-jsx'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rizzatti/dash.vim'
 Plugin 'dcharbon/vim-flatbuffers'
+Plugin 'vim-scripts/ShaderHighLight'

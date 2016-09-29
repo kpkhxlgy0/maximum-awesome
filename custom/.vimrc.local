@@ -87,6 +87,8 @@ set completeopt=longest,menu ",preview
 let g:gitgutter_highlight_lines = 0
 unmap <leader>g
 
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
 " fun! ChangeTab()
 "     if &ft =~ 'cs\|go'
 "         set noexpandtab
@@ -104,10 +106,37 @@ unmap <leader>g
 au FileType cmake setl shiftwidth=2 softtabstop=2 tabstop=2
 au FileType cs,go setl noexpandtab
 
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:JSHintUpdateWriteOnly = 1
-let g:JSHintHighlightErrorLine = 0
+" let g:syntastic_javascript_checkers = ["jshint"]
+" let g:JSHintUpdateWriteOnly = 1
+" let g:JSHintHighlightErrorLine = 0
 " let g:jshint_highlight_color = "Red"
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+
+" let g:syntastic_cpp_compiler='clang++'
+" let g:syntastic_cpp_compiler_options='-std=c++11 -stdlib=libc++'
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+let g:syntastic_enable_signs = 1
+let g:jsx_ext_required = 0
 
 " nmap <leader>ff :!js-beautify -f % -r<CR>
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
@@ -171,7 +200,7 @@ if !exists("*FormartSrc")
         if &filetype == 'c'
             exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
         elseif &filetype == 'cpp' || &filetype == 'hpp'
-            exec "r !astyle --style=kr --suffix=none %"
+            exec "r !astyle --style=java --suffix=none %"
         elseif &filetype == 'perl'
             exec "!astyle --style=gnu --suffix=none %"
         elseif &filetype == 'py'||&filetype == 'python'
@@ -254,6 +283,13 @@ let g:ycm_confirm_extra_conf = 0
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gd :YcmCompleter GoTo<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdf :YcmCompleter GoToDefinition<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdc :YcmCompleter GoToDeclaration<CR>
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
+let g:color_coded_enabled = 1
+let g:color_coded_filetypes = ['c', 'cpp', 'objc', 'objcpp']
+
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -281,6 +317,15 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
     \ }
+set tags=tags,.tags
+autocmd FileType c              set tags=.tags_cpp,$HOME/.vim/tags/cpp
+autocmd FileType cpp            set tags=.tags_cpp,$HOME/.vim/tags/cpp
+autocmd FileType css            set tags=.tags_css,$HOME/.vim/tags/css
+autocmd FileType java           set tags=.tags_java,$HOME/.vim/tags/java
+autocmd FileType javascript     set tags=.tags_js,$HOME/.vim/tags/js
+autocmd FileType html           set tags=.tags_html,$HOME/.vim/tags/html
+autocmd FileType php            set tags=.tags_php,$HOME/.vim/tags/php
+autocmd FileType sh             set tags=.tags_sh,$HOME/.vim/tags/sh
 " filetype off
 " filetype plugin indent off
 " set rtp+=$GOROOT/misc/vim
