@@ -70,7 +70,7 @@ let g:indent_guides_start_level=2
 " set t_8f=[38;2;%lu;%lu;%lum
 colorscheme onedark
 let g:airline_theme='onedark'
-set guifont=Consolas:h12
+set guifont=Consolas:h14
 
 set nobomb
 set nowrap
