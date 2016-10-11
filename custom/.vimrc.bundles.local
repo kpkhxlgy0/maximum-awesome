@@ -13,6 +13,7 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'Raimondi/delimitMate'
 " python
 Plugin 'klen/python-mode'
+" Plugin 'nvie/vim-flake8'
 " js
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
