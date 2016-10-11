@@ -277,11 +277,6 @@ if has("cscope")
                 \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
-" Vim plugins for Go
-" if !exists('g:neocomplcache_omni_patterns')
-"     let g:neocomplcache_omni_patterns = {}
-" endif
-" let g:neocomplcache_omni_patterns.go = '\h\w*\.'
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
@@ -294,6 +289,9 @@ let g:cpp_experimental_template_highlight = 1
 
 let g:color_coded_enabled = 1
 let g:color_coded_filetypes = ['c', 'cpp', 'objc', 'objcpp']
+
+let g:Omnisharp_start_server = 1
+au FileType cs OmniSharpHighlightTypes
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',

@@ -7,7 +7,7 @@ Plugin 'Valloric/YouCompleteMe'
 " cpp
 " Plugin 'Mizuchi/STL-Syntax'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-" Plugin 'jeaye/color_coded'
+Plugin 'jeaye/color_coded'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'vim-scripts/a.vim'
 Plugin 'Raimondi/delimitMate'
@@ -27,7 +27,8 @@ Plugin 'tbastos/vim-lua'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 " cs
-" Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'OmniSharp/omnisharp-vim'
+" Plugin 'OrangeT/vim-csharp'
 " other
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
