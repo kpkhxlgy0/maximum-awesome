@@ -1,7 +1,7 @@
 " theme
-Plugin 'tomasr/molokai'
 Plugin 'joshdick/onedark.vim'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " complete
 Plugin 'Valloric/YouCompleteMe'
 " cpp

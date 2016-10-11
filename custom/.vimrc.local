@@ -64,7 +64,13 @@ let g:indent_guides_start_level=2
 
 " let g:molokai_original = 1
 " let g:rehash256 = 1
+" let g:onedark_terminal_italics=1
+" set termguicolors
+" set t_8b=[48;2;%lu;%lu;%lum
+" set t_8f=[38;2;%lu;%lu;%lum
 colorscheme onedark
+let g:airline_theme='onedark'
+set guifont=Consolas:h12
 
 set nobomb
 set nowrap
