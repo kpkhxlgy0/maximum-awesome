@@ -5,12 +5,10 @@ inoremap jj <ESC>
 
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
-  " colorscheme molokai
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
+    colorscheme onedark
   else
-    " colorscheme desert
-    colorscheme solarized
+    colorscheme onedark
   endif
 endif
 
@@ -66,6 +64,7 @@ let g:indent_guides_start_level=2
 
 " let g:molokai_original = 1
 " let g:rehash256 = 1
+colorscheme onedark
 
 set nobomb
 set nowrap
