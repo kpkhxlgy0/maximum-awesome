@@ -210,6 +210,8 @@ if !exists("*FormartSrc")
             exec "!astyle --style=gnu --suffix=none %"
         elseif &filetype == 'py'||&filetype == 'python'
             exec "r !autopep8 --max-line-length 120 -i --aggressive %"
+        elseif &filetype == 'cs'
+            exec "!astyle --style=java -xC120 -t --suffix=none %"
         elseif &filetype == 'java'
             exec "!astyle --style=java --suffix=none %"
         elseif &filetype == 'jsp'
