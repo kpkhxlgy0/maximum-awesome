@@ -109,7 +109,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " au BufWritePre * call ChangeTab()
 " au FileType * setl shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType cmake setl shiftwidth=2 softtabstop=2 tabstop=2
-au FileType cs,go setl noexpandtab
+au FileType go setl noexpandtab
 
 " let g:syntastic_javascript_checkers = ["jshint"]
 " let g:JSHintUpdateWriteOnly = 1
@@ -211,7 +211,7 @@ if !exists("*FormartSrc")
         elseif &filetype == 'py'||&filetype == 'python'
             exec "r !autopep8 --max-line-length 120 -i --aggressive %"
         elseif &filetype == 'cs'
-            exec "!astyle --style=java -xC120 -t --suffix=none %"
+            exec "!astyle --style=java -xC120 --suffix=none %"
         elseif &filetype == 'java'
             exec "!astyle --style=java --suffix=none %"
         elseif &filetype == 'jsp'
