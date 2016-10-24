@@ -447,3 +447,6 @@ if(has("win32") || has("win64") || has("win95") || has("win16"))
     language messages zh_CN.utf-8
     set directory=.,%TEMP%
 endif
+
+set exrc
+set secure
