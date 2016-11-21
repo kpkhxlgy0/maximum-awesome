@@ -6,8 +6,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 " cpp
 " Plugin 'Mizuchi/STL-Syntax'
-" Plugin 'octol/vim-cpp-enhanced-highlight'
 if(has("win32") || has("win64") || has("win95") || has("win16"))
+Plugin 'octol/vim-cpp-enhanced-highlight'
 else
 Plugin 'jeaye/color_coded'
 endif
