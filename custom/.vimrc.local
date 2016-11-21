@@ -6,9 +6,9 @@ inoremap jj <ESC>
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme onedark
+    colorscheme dracula
   else
-    colorscheme onedark
+    colorscheme dracula
   endif
 endif
 
@@ -64,13 +64,12 @@ let g:indent_guides_start_level=2
 
 " let g:molokai_original = 1
 " let g:rehash256 = 1
-" let g:onedark_terminal_italics=1
 " set termguicolors
 " set t_8b=[48;2;%lu;%lu;%lum
 " set t_8f=[38;2;%lu;%lu;%lum
-colorscheme onedark
-let g:airline_theme='onedark'
-set guifont=Consolas:h14
+colorscheme dracula
+let g:airline_theme='dracula'
+set guifont=Inconsolata:h18
 
 set nobomb
 set nowrap
@@ -441,6 +440,9 @@ let g:ctrlp_working_path_mode = 0
 
 " markdown
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>
+
+" commentary
+au FileType c,cpp,cs setl commentstring=//\ %s
 
 " for windows
 if(has("win32") || has("win64") || has("win95") || has("win16"))
