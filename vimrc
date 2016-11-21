@@ -1,3 +1,7 @@
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+endif
 " don't bother with vi compatibility
 set nocompatible
 
@@ -7,14 +11,26 @@ syntax enable
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+  set rtp+=%HOME%/vimfiles/bundle/Vundle.vim/
+  call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
+  let g:vundle#bundle_dir='~/vimfiles/bundle/'
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+endif
 
 " install Vundle bundles
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-  source ~/.vimrc.bundles.local
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+  if filereadable(expand("~/vimrc.bundles"))
+    source ~/vimrc.bundles
+  endif
+else
+  if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+  endif
 endif
+source ~/.vimrc.bundles.local
 
 call vundle#end()
 
@@ -68,7 +84,11 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+  noremap <silent> <leader>V :source ~/_vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+else
+  noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+endif
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %

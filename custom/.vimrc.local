@@ -42,9 +42,9 @@ endif
 set fileencodings=utf-8,gbk
 
 if(has("win32") || has("win64") || has("win95") || has("win16"))
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h12 " :cANSI
+  set guifont=Consolas:h12 " :cANSI
 else
-    set guifont=Menlo:h12
+  set guifont=Menlo:h12
 endif
 set guioptions-=m
 set guioptions-=T
@@ -116,7 +116,7 @@ au FileType go setl noexpandtab
 " let g:jshint_highlight_color = "Red"
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
