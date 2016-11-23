@@ -70,6 +70,8 @@ let g:indent_guides_start_level=2
 colorscheme dracula
 let g:airline_theme='dracula'
 set guifont=Inconsolata:h18
+hi Pmenu ctermfg=NONE ctermbg=232 cterm=NONE guifg=NONE guibg=#080808 gui=NONE
+hi PmenuSel ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 
 set nobomb
 set nowrap
