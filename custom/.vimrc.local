@@ -283,6 +283,7 @@ endif
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gd :YcmCompleter GoTo<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdf :YcmCompleter GoToDefinition<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdc :YcmCompleter GoToDeclaration<CR>
@@ -293,8 +294,8 @@ let g:cpp_experimental_template_highlight = 1
 let g:color_coded_enabled = 1
 let g:color_coded_filetypes = ['c', 'cpp', 'objc', 'objcpp']
 
-let g:Omnisharp_start_server = 1
-au FileType cs OmniSharpHighlightTypes
+" let g:Omnisharp_start_server = 1
+" au FileType cs OmniSharpHighlightTypes
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
