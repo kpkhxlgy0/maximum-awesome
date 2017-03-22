@@ -31,7 +31,7 @@ Plugin 'tbastos/vim-lua'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 " cs
-Plugin 'OmniSharp/omnisharp-vim'
+" Plugin 'OmniSharp/omnisharp-vim'
 " Plugin 'OrangeT/vim-csharp'
 " other
 Plugin 'godlygeek/tabular'

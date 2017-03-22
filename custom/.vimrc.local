@@ -198,15 +198,14 @@ au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
 " nmap <leader>pp :!autopep8 -i %<CR>
 nmap <leader>cc :cd %:h<CR>
 nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
-nmap <leader>pp :call FormartSrc()<CR>
-"定义FormartSrc()
-if !exists("*FormartSrc")
-    func FormartSrc()
+nmap <leader>pp :call FormatSrc()<CR>
+" if !exists("*FormatSrc")
+    func FormatSrc()
         exec "w"
         if &filetype == 'c'
             exec "!astyle --style=ansi -xC120 -o -O -n %"
         elseif &filetype == 'cpp' || &filetype == 'hpp'
-            exec "!astyle --style=java -xC120 -o -O -n %"
+            exec "!astyle --style=java -xC120 -o -O -n -k3 %"
         elseif &filetype == 'perl'
             exec "!astyle --style=gnu -xC120 -o -O -n %"
         elseif &filetype == 'py'||&filetype == 'python'
@@ -222,7 +221,7 @@ if !exists("*FormartSrc")
         endif
         exec "e!  %"
     endfunc
-endif
+" endif
 
 " cscope
 if has("cscope")
@@ -283,6 +282,7 @@ endif
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gd :YcmCompleter GoTo<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdf :YcmCompleter GoToDefinition<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdc :YcmCompleter GoToDeclaration<CR>
@@ -293,8 +293,8 @@ let g:cpp_experimental_template_highlight = 1
 let g:color_coded_enabled = 1
 let g:color_coded_filetypes = ['c', 'cpp', 'objc', 'objcpp']
 
-let g:Omnisharp_start_server = 1
-au FileType cs OmniSharpHighlightTypes
+" let g:Omnisharp_start_server = 1
+" au FileType cs OmniSharpHighlightTypes
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -444,7 +444,8 @@ let g:ctrlp_working_path_mode = 0
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>
 
 " commentary
-au FileType c,cpp,cs setl commentstring=//\ %s
+au FileType c,cpp,cs,fbs setl commentstring=//\ %s
+au FileType cmake setl commentstring=#\ %s
 
 " for windows
 if(has("win32") || has("win64") || has("win95") || has("win16"))
