@@ -70,7 +70,7 @@ let g:indent_guides_start_level=2
 colorscheme dracula
 let g:airline_theme='dracula'
 " set guifont=Source\ Code\ Pro:h14
-set guifont=Inziu\ Iosevka\ SC:h18
+set guifont=Inziu\ Iosevka\ SC:h14
 hi Pmenu ctermfg=NONE ctermbg=232 cterm=NONE guifg=NONE guibg=#080808 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 
@@ -201,7 +201,7 @@ nmap <leader>cc :cd %:h<CR>
 nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
 nmap <leader>pp :call FormatSrc()<CR>
 " if !exists("*FormatSrc")
-    func FormatSrc()
+    func! FormatSrc()
         exec "w"
         if &filetype == 'c'
             exec "!astyle --style=ansi -xC120 -o -O -n %"
