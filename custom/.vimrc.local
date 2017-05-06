@@ -1,3 +1,9 @@
+let os=substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+  let os = 'Mac'
+elseif os != 'Linux'
+  let os = 'Windows'
+endif
 set nocursorline " don't highlight current line
 
 " keyboard shortcuts
@@ -284,8 +290,10 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
+if(os == 'Mac')
+  let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+  let g:ycm_python_binary_path = '/usr/local/bin/python3'
+endif
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gd :YcmCompleter GoTo<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdf :YcmCompleter GoToDefinition<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdc :YcmCompleter GoToDeclaration<CR>
@@ -453,7 +461,7 @@ au FileType cmake setl commentstring=#\ %s
 " for windows
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     language messages zh_CN.utf-8
-    set directory=.,%TEMP%
+    set directory=%TEMP%,.
 endif
 
 set exrc
