@@ -1,9 +1,3 @@
-let os=substitute(system('uname'), '\n', '', '')
-if os == 'Darwin' || os == 'Mac'
-  let os = 'Mac'
-elseif os != 'Linux'
-  let os = 'Windows'
-endif
 set nocursorline " don't highlight current line
 
 " keyboard shortcuts
