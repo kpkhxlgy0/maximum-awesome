@@ -1,15 +1,11 @@
-let os=substitute(system('uname'), '\n', '', '')
-if os == 'Darwin' || os == 'Mac'
-  let os = 'Mac'
-elseif os != 'Linux'
-  let os = 'Windows'
-endif
 " theme
 Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " complete
-Plugin 'Valloric/YouCompleteMe'
+if(os != "Windows" || has("gui_running"))
+  Plugin 'Valloric/YouCompleteMe'
+endif
 " cpp
 " Plugin 'Mizuchi/STL-Syntax'
 if(os == 'Windows')
@@ -46,3 +42,4 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'dcharbon/vim-flatbuffers'
 Plugin 'vim-scripts/ShaderHighLight'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'embear/vim-localvimrc'

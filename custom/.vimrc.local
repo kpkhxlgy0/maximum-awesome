@@ -41,11 +41,6 @@ endif
 
 set fileencodings=utf-8,gbk
 
-if(has("win32") || has("win64") || has("win95") || has("win16"))
-  set guifont=Consolas:h12 " :cANSI
-else
-  set guifont=Menlo:h12
-endif
 set guioptions-=m
 set guioptions-=T
 set background=dark
@@ -452,11 +447,10 @@ autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a G
 au FileType c,cpp,cs,fbs setl commentstring=//\ %s
 au FileType cmake setl commentstring=#\ %s
 
+let g:localvimrc_ask = 0
+
 " for windows
-if(has("win32") || has("win64") || has("win95") || has("win16"))
+if(os == "Windows")
     language messages zh_CN.utf-8
     set directory=%TEMP%,.
 endif
-
-set exrc
-set secure

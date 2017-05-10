@@ -1,4 +1,11 @@
-if(has("win32") || has("win64") || has("win95") || has("win16"))
+let os=substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+  let os = 'Mac'
+elseif os != 'Linux'
+  let os = 'Windows'
+  set t_Co=256
+endif
+if(os == "Windows")
   source $VIMRUNTIME/delmenu.vim
   source $VIMRUNTIME/menu.vim
 endif
@@ -11,17 +18,22 @@ syntax enable
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-if(has("win32") || has("win64") || has("win95") || has("win16"))
-  set rtp+=%HOME%/vimfiles/bundle/Vundle.vim/
-  call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
-  let g:vundle#bundle_dir='~/vimfiles/bundle/'
+if(os == "Windows")
+  if(has("gui_running"))
+    set rtp+=%HOME%/vimfiles/bundle/Vundle.vim/
+    call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
+    let g:vundle#bundle_dir='$HOME/vimfiles/bundle/'
+  else
+    set rtp+=~/vimfiles/bundle/Vundle.vim
+    call vundle#begin('~/vimfiles/bundle/')
+  endif
 else
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
 endif
 
 " install Vundle bundles
-if(has("win32") || has("win64") || has("win95") || has("win16"))
+if(os == "Windows")
   if filereadable(expand("~/vimrc.bundles"))
     source ~/vimrc.bundles
   endif
@@ -84,7 +96,7 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
-if(has("win32") || has("win64") || has("win95") || has("win16"))
+if(os == "Windows")
   noremap <silent> <leader>V :source ~/_vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 else
   noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
