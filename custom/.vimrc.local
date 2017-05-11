@@ -451,6 +451,6 @@ let g:localvimrc_ask = 0
 
 " for windows
 if(os == "Windows")
-    language messages zh_CN.utf-8
+    language messages en_US.utf-8
     set directory=%TEMP%,.
 endif
