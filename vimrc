@@ -24,8 +24,13 @@ if(os == "Windows")
     call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
     let g:vundle#bundle_dir='$HOME/vimfiles/bundle/'
   else
-    set rtp+=~/vimfiles/bundle/Vundle.vim
-    call vundle#begin('~/vimfiles/bundle/')
+    if(isdirectory(expand('~/vimfiles/bundle/')))
+      set rtp+=~/vimfiles/bundle/Vundle.vim
+      call vundle#begin('~/vimfiles/bundle/')
+    else
+      set rtp+=~/.vim/bundle/Vundle.vim
+      call vundle#begin('~/.vim/bundle/')
+    endif
   endif
 else
   set rtp+=~/.vim/bundle/Vundle.vim
@@ -33,14 +38,10 @@ else
 endif
 
 " install Vundle bundles
-if(os == "Windows")
-  if filereadable(expand("~/vimrc.bundles"))
-    source ~/vimrc.bundles
-  endif
+if filereadable(expand("~/vimrc.bundles"))
+  source ~/vimrc.bundles
 else
-  if filereadable(expand("~/.vimrc.bundles"))
-    source ~/.vimrc.bundles
-  endif
+  source ~/.vimrc.bundles
 endif
 source ~/.vimrc.bundles.local
 
