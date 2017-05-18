@@ -472,6 +472,10 @@ endif
 " markdown
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>
 
+if(os == "Windows")
+  let g:zv_zeal_executable = "zeal"
+endif
+
 " commentary
 au FileType c,cpp,cs,fbs setl commentstring=//\ %s
 au FileType cmake setl commentstring=#\ %s
@@ -480,6 +484,6 @@ let g:localvimrc_ask = 0
 
 " for windows
 if(os == "Windows")
-    language messages en_US.utf-8
-    set directory=%TEMP%,.
+  language messages en_US.utf-8
+  set directory=%TEMP%,.
 endif
