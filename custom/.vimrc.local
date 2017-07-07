@@ -89,7 +89,24 @@ set completeopt=longest,menu ",preview
 let g:gitgutter_highlight_lines = 0
 unmap <leader>g
 
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+func! Flatten(list)
+  let val = []
+  for elem in a:list
+    if type(elem) == type([])
+      call extend(val, Flatten(elem))
+    else
+      call add(val, elem)
+    endif
+    unlet elem
+  endfor
+  return val
+endfunc
+
+if !exists('NERDTreeIgnore')
+  let NERDTreeIgnore = []
+endif
+let NERDTreeIgnore += ['\.pyc$', '\.pyo$']
+" let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " fun! ChangeTab()
 "     if &ft =~ 'cs\|go'
@@ -105,7 +122,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " endfun
 " au BufWritePre * call ChangeTab()
 " au FileType * setl shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-au FileType cmake setl shiftwidth=2 softtabstop=2 tabstop=2
+au FileType cmake,vim setl shiftwidth=2 softtabstop=2 tabstop=2
 au FileType go setl noexpandtab
 
 let g:syntastic_javascript_checkers = ["eslint"]

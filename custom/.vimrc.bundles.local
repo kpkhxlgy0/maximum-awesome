@@ -38,8 +38,11 @@ Plugin 'xolox/vim-misc'
 " other
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'rizzatti/dash.vim'
-Plugin 'KabbAmine/zeavim.vim'
+if os == 'Mac'
+  Plugin 'rizzatti/dash.vim'
+elseif os == 'Windows'
+  Plugin 'KabbAmine/zeavim.vim'
+endif
 Plugin 'dcharbon/vim-flatbuffers'
 Plugin 'vim-scripts/ShaderHighLight'
 Plugin 'tikhomirov/vim-glsl'
