@@ -17,7 +17,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'vim-scripts/a.vim'
 Plugin 'Raimondi/delimitMate'
 " python
-Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
 " Plugin 'nvie/vim-flake8'
 " js
 Plugin 'maksimr/vim-jsbeautify'
