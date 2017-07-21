@@ -18,34 +18,39 @@ syntax enable
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-if(os == "Windows")
-  if(has("gui_running"))
-    set rtp+=%HOME%/vimfiles/bundle/Vundle.vim/
-    call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
-    let g:vundle#bundle_dir='$HOME/vimfiles/bundle/'
-  else
-    if(isdirectory(expand('~/vimfiles/bundle/')))
-      set rtp+=~/vimfiles/bundle/Vundle.vim
-      call vundle#begin('~/vimfiles/bundle/')
-    else
-      set rtp+=~/.vim/bundle/Vundle.vim
-      call vundle#begin('~/.vim/bundle/')
-    endif
-  endif
-else
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-endif
+" if(os == "Windows")
+"   if(has("gui_running"))
+"     set rtp+=%HOME%/vimfiles/bundle/Vundle.vim/
+"     call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
+"     let g:vundle#bundle_dir='$HOME/vimfiles/bundle/'
+"   else
+"     if(isdirectory(expand('~/vimfiles/bundle/')))
+"       set rtp+=~/vimfiles/bundle/Vundle.vim
+"       call vundle#begin('~/vimfiles/bundle/')
+"     else
+"       set rtp+=~/.vim/bundle/Vundle.vim
+"       call vundle#begin('~/.vim/bundle/')
+"     endif
+"   endif
+" else
+"   set rtp+=~/.vim/bundle/Vundle.vim
+"   call vundle#begin()
+" endif
 
 " install Vundle bundles
-if filereadable(expand("~/vimrc.bundles"))
-  source ~/vimrc.bundles
-else
-  source ~/.vimrc.bundles
-endif
-source ~/.vimrc.bundles.local
+" if filereadable(expand("~/vimrc.bundles"))
+"   source ~/vimrc.bundles
+" else
+"   source ~/.vimrc.bundles
+" endif
+" source ~/.vimrc.bundles.local
 
-call vundle#end()
+" call vundle#end()
+
+" install plug bundles
+call plug#begin('~/.vim/plugged')
+source ~/.vimrc.plugs
+call plug#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
