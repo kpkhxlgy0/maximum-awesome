@@ -1,0 +1,89 @@
+Plug 'VundleVim/Vundle.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'austintaylor/vim-indentobject'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'juvenn/mustache.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'majutsushi/tagbar'
+Plug 'rking/ag.vim'
+Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nono/vim-handlebars'
+Plug 'pangloss/vim-javascript'
+" Plug 'wookiehangover/jshint.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-pastie'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vividchalk'
+Plug 'eventualbuddha/vim-protobuf'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/greplace.vim'
+Plug 'vim-scripts/matchit.zip'
+
+" theme
+Plug 'dracula/vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" complete
+if(os != "Windows" || has("gui_running"))
+  Plug 'Valloric/YouCompleteMe'
+endif
+" cpp
+" Plug 'Mizuchi/STL-Syntax'
+if(os == 'Windows')
+  Plug 'octol/vim-cpp-enhanced-highlight'
+else
+  Plug 'jeaye/color_coded'
+endif
+Plug 'rdnetto/YCM-Generator'
+Plug 'vim-scripts/a.vim'
+Plug 'Raimondi/delimitMate'
+" python
+Plug 'python-mode/python-mode'
+" Plugin 'nvie/vim-flake8'
+" js
+Plug 'maksimr/vim-jsbeautify'
+Plug 'einars/js-beautify'
+Plug 'ternjs/tern_for_vim'
+Plug 'mxw/vim-jsx'
+" html
+Plug 'mattn/emmet-vim'
+" golang
+Plug 'fatih/vim-go'
+" lua
+Plug 'tbastos/vim-lua'
+Plug 'xolox/vim-lua-ftplugin'
+Plug 'xolox/vim-misc'
+" cs
+" Plugin 'OmniSharp/omnisharp-vim'
+" Plugin 'OrangeT/vim-csharp'
+" other
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+if os == 'Mac'
+  Plug 'rizzatti/dash.vim'
+elseif os == 'Windows'
+  Plug 'KabbAmine/zeavim.vim'
+endif
+Plug 'dcharbon/vim-flatbuffers'
+Plug 'vim-scripts/ShaderHighLight'
+Plug 'tikhomirov/vim-glsl'
+Plug 'embear/vim-localvimrc'
