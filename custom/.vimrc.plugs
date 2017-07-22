@@ -1,6 +1,6 @@
-Plug 'VundleVim/Vundle.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'VundleVim/Vundle.vim'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'austintaylor/vim-indentobject'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'juvenn/mustache.vim'
@@ -16,7 +16,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 " Plug 'wookiehangover/jshint.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-bundler'
@@ -34,7 +34,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vividchalk'
 Plug 'eventualbuddha/vim-protobuf'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/Align'
+" Plug 'vim-scripts/Align'
+Plug 'junegunn/vim-easy-align'
 Plug 'vim-scripts/greplace.vim'
 Plug 'vim-scripts/matchit.zip'
 
@@ -44,7 +45,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " complete
 if(os != "Windows" || has("gui_running"))
-  Plug 'Valloric/YouCompleteMe'
+  function! BuildYCM(info)
+    " info is a dictionary with 3 fields
+    " - name:   name of the plugin
+    " - status: 'installed', 'updated', or 'unchanged'
+    " - force:  set on PlugInstall! or PlugUpdate!
+    if a:info.status == 'installed' || a:info.force
+      !python3 ./install.py --all
+    endif
+  endfunction
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
 " cpp
 " Plug 'Mizuchi/STL-Syntax'
@@ -67,7 +77,7 @@ Plug 'mxw/vim-jsx'
 " html
 Plug 'mattn/emmet-vim'
 " golang
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " lua
 Plug 'tbastos/vim-lua'
 Plug 'xolox/vim-lua-ftplugin'
@@ -87,6 +97,10 @@ Plug 'dcharbon/vim-flatbuffers'
 Plug 'vim-scripts/ShaderHighLight'
 Plug 'tikhomirov/vim-glsl'
 Plug 'embear/vim-localvimrc'
+" Plug 'w0rp/ale'
+Plug 'haya14busa/incsearch.vim'
+" Plug 'mhinz/vim-signify'
+Plug 'gregsexton/gitv', {'on': ['Gitv']}
 if(os == 'Mac')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
