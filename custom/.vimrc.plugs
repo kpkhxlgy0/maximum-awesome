@@ -53,7 +53,7 @@ if(os == 'Windows')
 else
   Plug 'jeaye/color_coded'
 endif
-Plug 'rdnetto/YCM-Generator'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'vim-scripts/a.vim'
 Plug 'Raimondi/delimitMate'
 " python
@@ -87,3 +87,8 @@ Plug 'dcharbon/vim-flatbuffers'
 Plug 'vim-scripts/ShaderHighLight'
 Plug 'tikhomirov/vim-glsl'
 Plug 'embear/vim-localvimrc'
+if(os == 'Mac')
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/vim-xmark', { 'do': 'make' }
+endif
