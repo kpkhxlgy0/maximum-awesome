@@ -309,7 +309,7 @@ let g:cpp_experimental_template_highlight = 1
 let g:color_coded_enabled = 1
 let g:color_coded_filetypes = ['c', 'cpp', 'objc', 'objcpp']
 
-" let g:Omnisharp_start_server = 1
+let g:Omnisharp_start_server = 1
 " au FileType cs OmniSharpHighlightTypes
 
 let g:tagbar_type_go = {

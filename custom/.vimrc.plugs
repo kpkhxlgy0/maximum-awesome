@@ -83,8 +83,8 @@ Plug 'tbastos/vim-lua'
 Plug 'xolox/vim-lua-ftplugin'
 Plug 'xolox/vim-misc'
 " cs
-" Plugin 'OmniSharp/omnisharp-vim'
-" Plugin 'OrangeT/vim-csharp'
+" Plug 'OmniSharp/omnisharp-vim'
+Plug 'OrangeT/vim-csharp'
 " other
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
