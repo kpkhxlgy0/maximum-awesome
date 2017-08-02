@@ -104,6 +104,7 @@ Plug 'gregsexton/gitv', {'on': ['Gitv']}
 if(os != 'Windows')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  " Plug 'burke/matcher', { 'do': 'make' }
 endif
 if(os == 'Mac')
   Plug 'junegunn/vim-xmark', { 'do': 'make' }
