@@ -505,6 +505,10 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+if(os != 'Windows' && !has('gui_running'))
+  nnoremap <C-p> :FZF<CR>
+endif
+
 " for windows
 if(os == "Windows")
   language messages en_US.utf-8
