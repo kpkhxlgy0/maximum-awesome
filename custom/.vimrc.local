@@ -240,7 +240,7 @@ endif
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gd :YcmCompleter GoTo<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdf :YcmCompleter GoToDefinition<CR>
 au FileType c,cpp,objc,objcpp,cs,python,rust nmap <leader>gdc :YcmCompleter GoToDeclaration<CR>
-let g:ycm_rust_src_path = '~/Documents/rustc-1.19.0-src/src'
+let g:ycm_rust_src_path = $RUST_SRC_PATH
 
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1

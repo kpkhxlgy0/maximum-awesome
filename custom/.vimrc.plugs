@@ -87,6 +87,7 @@ Plug 'xolox/vim-misc'
 Plug 'OrangeT/vim-csharp'
 " rust
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'timonv/vim-cargo'
 Plug 'cespare/vim-toml'
 " other
