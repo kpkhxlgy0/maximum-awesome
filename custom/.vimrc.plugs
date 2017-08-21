@@ -88,6 +88,7 @@ Plug 'OrangeT/vim-csharp'
 " rust
 Plug 'rust-lang/rust.vim'
 Plug 'timonv/vim-cargo'
+Plug 'cespare/vim-toml'
 " other
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
