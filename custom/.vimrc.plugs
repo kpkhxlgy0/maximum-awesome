@@ -64,6 +64,7 @@ else
   Plug 'jeaye/color_coded'
 endif
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/a.vim'
 Plug 'Raimondi/delimitMate'
 " python

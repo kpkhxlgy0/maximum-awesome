@@ -208,6 +208,9 @@ au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
 nmap <leader>cc :cd %:h<CR>
 nmap <leader>hh :% ! php_beautifier -a --filters "Default() ArrayNested()"<CR>
 nmap <leader>pp :call FormatSrc()<CR>
+au FileType c,cpp,hpp,objc,objcpp nmap <buffer><leader>pp :<C-u>ClangFormat<CR>
+au FileType c,cpp,hpp,objc,objcpp vmap <buffer><leader>pp :ClangFormat<CR>
+let g:clang_format#detect_style_file = 1
 func! FormatSrc()
   exec "w"
   if &filetype == 'c'
