@@ -74,7 +74,7 @@ set nowrap
 
 set foldmethod=indent
 set foldlevel=99
-set cc=120
+set cc=100
 
 set completeopt=longest,menu ",preview
 " let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
@@ -215,21 +215,21 @@ let g:clang_format#detect_style_file = 1
 func! FormatSrc()
   exec "w"
   if &filetype == 'c'
-    exec "!astyle --style=java -xC120 -o -O -n -k3 %"
+    exec "!astyle --style=java -xC100 -o -O -n -k3 %"
   elseif &filetype == 'cpp' || &filetype == 'hpp'
-    exec "!astyle --style=java -xC121 -o -O -n -k3 %"
+    exec "!astyle --style=java -xC100 -o -O -n -k3 %"
   elseif &filetype == 'perl'
-    exec "!astyle --style=gnu -xC120 -o -O -n %"
+    exec "!astyle --style=gnu -xC100 -o -O -n %"
   elseif &filetype == 'py'||&filetype == 'python'
-    exec "!autopep8 --max-line-length 120 -i --aggressive %"
+    exec "!autopep8 --max-line-length 100 -i --aggressive %"
   elseif &filetype == 'cs'
-    exec "!astyle --style=java -xC120 -o -O -n %"
+    exec "!astyle --style=java -xC100 -o -O -n %"
   elseif &filetype == 'java'
-    exec "!astyle --style=java -xC120 -o -O -n %"
+    exec "!astyle --style=java -xC100 -o -O -n %"
   elseif &filetype == 'jsp'
-    exec "!astyle --style=gnu -xC120 -o -O -n %"
+    exec "!astyle --style=gnu -xC100 -o -O -n %"
   elseif &filetype == 'xml'
-    exec "!astyle --style=gnu -xC120 -o -O -n %"
+    exec "!astyle --style=gnu -xC100 -o -O -n %"
   endif
   exec "e! %"
 endfunc
@@ -308,7 +308,7 @@ let g:pymode = 0
 " let g:pymode_paths = []
 let g:pymode_trim_whitespaces = 0
 " let g:pymode_options = 1
-let g:pymode_options_max_line_length = 120
+let g:pymode_options_max_line_length = 100
 " let g:pymode_options_colorcolumn = 1
 " let g:pymode_quickfix_minheight = 3
 " let g:pymode_quickfix_maxheight = 6
