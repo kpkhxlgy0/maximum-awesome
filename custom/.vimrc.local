@@ -424,6 +424,11 @@ if !exists("g:ctrlp_custom_ignore")
   "             \ 'fallback': s:ctrlp_fallback
   "             \ }
 endif
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 
 " markdown
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>
