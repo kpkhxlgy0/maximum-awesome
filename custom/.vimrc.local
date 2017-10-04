@@ -429,6 +429,11 @@ let g:ackhighlight = 1
 let g:ack_use_dispatch = 1
 nnoremap <leader>a :Ack<space>
 
+if (!has('gui_running'))
+  nnoremap <C-p> :Files<CR>
+  nnoremap <leader>b :Buffers<CR>
+endif
+
 " markdown
 autocmd FileType markdown,html nnoremap <leader>gc :update<bar>silent !open -a Google\ Chrome '%:p'<cr>
 
