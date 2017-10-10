@@ -121,7 +121,7 @@ let NERDTreeIgnore += ['\.pyc$', '\.pyo$']
 " endfun
 " au BufWritePre * call ChangeTab()
 " au FileType * setl shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-au FileType cmake,vim setl shiftwidth=2 softtabstop=2 tabstop=2
+au FileType cmake,vim,html setl shiftwidth=2 softtabstop=2 tabstop=2
 au FileType go setl noexpandtab
 
 let g:syntastic_javascript_checkers = ["eslint"]
@@ -432,6 +432,8 @@ nnoremap <leader>a :Ack<space>
 if (!has('gui_running'))
   nnoremap <C-p> :Files<CR>
   nnoremap <leader>b :Buffers<CR>
+  nnoremap <leader>t :Files<CR>
+  nnoremap <leader>T :Files<CR>
 endif
 
 " markdown
@@ -462,10 +464,6 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
-
-if(os != 'Windows' && !has('gui_running'))
-  nnoremap <C-p> :FZF<CR>
-endif
 
 " for windows
 if(os == "Windows")
