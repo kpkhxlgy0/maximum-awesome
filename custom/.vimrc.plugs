@@ -86,6 +86,7 @@ Plug 'xolox/vim-lua-ftplugin'
 Plug 'xolox/vim-misc'
 " cs
 " Plug 'OmniSharp/omnisharp-vim'
+" Plug 'svermeulen/omnisharp-vim', { 'branch': 'Python3' }
 Plug 'OrangeT/vim-csharp'
 " rust
 Plug 'rust-lang/rust.vim'
