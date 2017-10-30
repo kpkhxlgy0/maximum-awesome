@@ -65,7 +65,7 @@ let g:indent_guides_start_level=2
 colorscheme dracula
 let g:airline_theme='dracula'
 " set guifont=Source\ Code\ Pro:h14
-set guifont=Inziu\ Iosevka\ SC:h14
+set guifont=Sarasa\ Mono\ SC:h14
 hi Pmenu ctermfg=NONE ctermbg=232 cterm=NONE guifg=NONE guibg=#080808 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 
