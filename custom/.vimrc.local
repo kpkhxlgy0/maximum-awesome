@@ -106,6 +106,7 @@ if !exists('NERDTreeIgnore')
   let NERDTreeIgnore = []
 endif
 let NERDTreeIgnore += ['\.pyc$', '\.pyo$']
+let NERDTreeShowBookmarks=1
 
 " fun! ChangeTab()
 "     if &ft =~ 'cs\|go'
@@ -303,16 +304,16 @@ let g:lua_compiler_name = '/usr/local/bin/luac5.1'
 let g:lua_define_completefunc = 0
 
 " python-mode
-let g:pymode = 0
+let g:pymode = 1
 " let g:pymode_warnings = 1
 " let g:pymode_paths = []
-let g:pymode_trim_whitespaces = 0
+" let g:pymode_trim_whitespaces = 1
 " let g:pymode_options = 1
 let g:pymode_options_max_line_length = 100
 " let g:pymode_options_colorcolumn = 1
 " let g:pymode_quickfix_minheight = 3
 " let g:pymode_quickfix_maxheight = 6
-" let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 " let g:pymode_indent = 1
 " let g:pymode_folding = 1
 " let g:pymode_motion = 1
@@ -327,11 +328,11 @@ let g:pymode_breakpoint_bind = '<leader>pb'
 " let g:pymode_breakpoint_cmd = ''
 let g:pymode_lint = 0
 " let g:pymode_lint_on_write = 1
-let g:pymode_lint_unmodified = 1
+" let g:pymode_lint_unmodified = 0
 " let g:pymode_lint_on_fly = 0
 " let g:pymode_lint_message = 1
 " let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
-let g:pymode_lint_ignore = "C901,E501"
+" let g:pymode_lint_ignore = "C901,E501"
 " let g:pymode_lint_select = "E501,W0011,W430"
 " let g:pymode_lint_sort = []
 " let g:pymode_lint_cwindow = 1
@@ -353,8 +354,8 @@ let g:pymode_rope = 0
 " let g:pymode_rope_ropefolder='.ropeproject'
 " let g:pymode_rope_show_doc_bind = '<C-c>d'
 " let g:pymode_rope_regenerate_on_write = 1
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_rope_completion = 1
+" let g:pymode_rope_complete_on_dot = 1
 " let g:pymode_rope_completion_bind = '<C-Space>'
 " let g:pymode_rope_autoimport = 0
 " let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime'])
@@ -390,7 +391,7 @@ let g:pymode_rope_complete_on_dot = 0
 " let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
 " let g:pymode_syntax_docstrings = g:pymode_syntax_all
 
-" let python_highlight_all=1
+let python_highlight_all=1
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " let g:ctrlp_custom_ignore = {
