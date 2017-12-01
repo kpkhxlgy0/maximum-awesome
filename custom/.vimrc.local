@@ -130,9 +130,9 @@ let g:syntastic_javascript_checkers = ["eslint"]
 " let g:JSHintHighlightErrorLine = 0
 " let g:jshint_highlight_color = "Red"
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
@@ -158,6 +158,23 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 let g:syntastic_enable_signs = 1
 let g:jsx_ext_required = 0
+
+let g:ale_linters = {
+      \ 'cpp': [],
+      \ 'cs': [],
+      \}
+let g:ale_python_flake8_args = '--max-line-length=100'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_pattern_options = {
+      \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+      \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+      \}
+let g:ale_pattern_options_enabled = 1
 
 " nmap <leader>ff :!js-beautify -f % -r<CR>
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
