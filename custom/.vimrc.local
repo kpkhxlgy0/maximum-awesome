@@ -175,6 +175,7 @@ let g:ale_pattern_options = {
       \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
       \}
 let g:ale_pattern_options_enabled = 1
+let g:ale_lint_on_text_changed = 0
 
 " nmap <leader>ff :!js-beautify -f % -r<CR>
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
