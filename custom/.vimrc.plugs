@@ -110,6 +110,7 @@ Plug 'w0rp/ale'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'mhinz/vim-signify'
 Plug 'gregsexton/gitv', {'on': ['Gitv']}
+Plug 'vim-scripts/proguard.vim'
 if(os != 'Windows')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
