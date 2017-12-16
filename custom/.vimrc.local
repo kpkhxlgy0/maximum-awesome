@@ -472,7 +472,7 @@ au FileType cmake setl commentstring=#\ %s
 
 let g:localvimrc_ask = 0
 let g:rustfmt_autosave = 1
-let g:rustfmt_command = 'rustfmt'
+let g:rustfmt_command = 'rustup run nightly rustfmt'
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
